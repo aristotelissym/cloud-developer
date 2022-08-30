@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import Jimp from "jimp";
 
 (async () => {
 
@@ -30,6 +31,25 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
+  app.get("/filteredimage/", async ( req, res ) => {
+    let { image_url } = req.query;
+
+    if ( !image_url ) {
+      return res.status(400).send("The Image URL is required")
+    }
+
+    // Jimp.read(image_url).then(img => {
+    //   return img
+    // })
+
+    // Jimp.HORIZONTAL_ALIGN_CENTER;
+    // Jimp.VERTICAL_ALIGN_MIDDLE;
+
+    return res.status(200).sendFile( 
+      await filterImageFromURL(image_url) 
+    )
+
+  })
   
   // Root Endpoint
   // Displays a simple message to the user
