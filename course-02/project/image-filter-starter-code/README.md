@@ -24,4 +24,4 @@
     - The project was built with the command `npm run build` which I had to customize because I use Windows 10 and I don't have the zip command. So I use the **7zip** tool. Moreover, the paths with the backslashes couldn't be used in Window's *cmd*. 
         - `npm run clean && tsc && cp package.json www\\package.json && mkdir www\\tmp\\ && cd www && '%PROGRAMFILES%\\WinRAR\\WinRAR.exe' a -afzip .\\www\\Archive.zip && cd ..`
 
-        ![EB Screenshot](deployment_screenshots\EB-screenshot-Aristotelis-Symeonidis.png)
+        ![EB Screenshot](deployment_screenshots/EB-screenshot-Aristotelis-Symeonidis.png)
