@@ -37,14 +37,7 @@ import Jimp from "jimp";
     if ( !image_url ) {
       return res.status(400).send("The Image URL is required")
     }
-
-    // Jimp.read(image_url).then(img => {
-    //   return img
-    // })
-
-    // Jimp.HORIZONTAL_ALIGN_CENTER;
-    // Jimp.VERTICAL_ALIGN_MIDDLE;
-
+    
     return res.status(200).sendFile( 
       await filterImageFromURL(image_url) 
     )
